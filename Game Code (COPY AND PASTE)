@@ -1,21 +1,24 @@
 """
 ---
 
-Avatar of Light v1.2.1
+Avatar of Light v1.3.0
 
 Created by Spacesity
 
-Software is open source. Feel free to modify this game for your own purpose.
+Music by my friend Sync (Check out his Music at https://soundcloud.com/user-902044539)
 
-Made with Python™
+Software is open source. Feel free to modify this game for your own purpose.
 
 ---
 
 Developer notes:
 
+- New music by my friend Sync (Beginning of Something New)
 - Allow support for both Arrow Keys and WASD
-- Tidied up code
-- Improved GUI
+
+---
+
+Controls:
 
 Press 'SPACE' to interact (Start/Pause/Restart). 
 Use arrow keys or 'A' and 'D' to move left and right.
@@ -23,9 +26,14 @@ Use arrow keys or 'A' and 'D' to move left and right.
 ---
 """
 
-import pygame, sys, random
+import pygame
+from pygame.locals import *
+from pygame import mixer
+import sys
+import random
 
 pygame.init()
+mixer.init()
 
 clock = pygame.time.Clock() # Frames per second
 
@@ -48,6 +56,10 @@ redFaceFont = pygame.font.Font(None, 25) # RedFace font
 hint = redFaceFont.render("Press space to start!", True, (255,255,255))
 credit = redFaceFont.render("Created by Spacesity", True, (255,255,255)) 
 retryHint = redFaceFont.render("You died. Retry? Press space!", True, (255,255,255))
+
+# Sound loading
+mixer.music.load('BeginningOfSomethingNew.mp3')
+mixer.music.play(-1)
 
 # Character size
 blockSize = 50
@@ -118,6 +130,7 @@ while True: # Start screen
 while True: 
     screen.fill((0,0,0)) # Constantly black background
     
+    
     if gameStart:
         # Events input
         pygame.key.set_repeat(16)
@@ -140,8 +153,6 @@ while True:
                     gameStart = False
                     gamePause = True
                     
-                    
-                    
         if x > (549 - blockSize): # Teleports player from RightHandSide to left
             x = 0
 
@@ -149,12 +160,6 @@ while True:
             x = 500 - blockSize
                     
         count = count + 1 # Increase frame counter
-        
-        """for enemyPosition in [(a,b),(c,d),(e,f)]:
-            if count >= 1200:
-                enemySpeed = blockSize/5
-            else:
-                enemySpeed = blockSize/7""" # TO BE CONTINUED....
         
         if count >= 1200:
             # Every (number) frames
