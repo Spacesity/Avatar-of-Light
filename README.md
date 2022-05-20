@@ -5,7 +5,7 @@ Firslty you must install the latest version of python via the python website: ht
 
 When you lanch the python lancher, there will be a tick box at the bottom which says "Add to PATH", click the box to get a tick.
 
-Once python is installed, download all the images for the game. Then, proceed to open "Command Prompt" in windows and open as administrator,
+Once python is installed, download all the images and music files for the game. Then, proceed to open "Command Prompt" in windows and open as administrator,
 then proceed to copy and paste the following: pip install pygame
 
 If the command prompt says your "pip" is outdates, then copy and paste this: python -m pip install -–upgrade pip
@@ -18,8 +18,12 @@ GAME OBJECTIVE:
 Use Arrow keys (left, right) and or WASD (A and D) to move side to side and spacebar to interact. You must avoid the enemies, and you earn 1 point for each enemy you dodge. Try and compete friends by getting high scores. 
 
 DEVELOPER LOG:
-Created by Spacesity
+Created by Spacesity 
+Music by Sync (Sound Cloud: https://soundcloud.com/user-902044539) 
 
+Avatar of Light v1.3.0
+- New Music by Sync
+- Removed unecessary code
 Avatar of Light v1.2.1
 - Allow support for both Arrow Keys and WASD
 Avatar of Light v1.2.0
