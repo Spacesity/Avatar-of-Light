@@ -24,11 +24,6 @@ Music by Sync (Sound Cloud: https://soundcloud.com/user-902044539)
 Avatar of Light v1.3.0
 - New Music by Sync
 - Removed unecessary code
-Avatar of Light v1.2.1
-- Allow support for both Arrow Keys and WASD
-Avatar of Light v1.2.0
-- Tidied up code
-- Improved GUI (Isn't that great still tbh)
 
 MORE CONTENT COMING SOON. Join https://discord.gg/RnQ82k6Npb to keep up to date (Gaming/Events Server). 
 
