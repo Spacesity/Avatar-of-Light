@@ -43,9 +43,9 @@ pygame.key.set_repeat()
 screen = pygame.display.set_mode((500, 500)) # Screen size
 
 # Image loading
-startButton = pygame.image.load("playbuttonv3.png").convert_alpha()
-pauseButton = pygame.image.load("pausebuttonv2.png").convert_alpha()
-retryButton = pygame.image.load("retrybuttonv3.png").convert_alpha()
+startButton = pygame.image.load("playbuttonv4.png").convert_alpha()
+pauseButton = pygame.image.load("pausebuttonv3.png").convert_alpha()
+retryButton = pygame.image.load("retrybuttonv4.png").convert_alpha()
 face = pygame.image.load("thelightv1.png").convert_alpha() # Red face
 enemyFace = pygame.image.load('thebadv1.png').convert_alpha() # Enemy face
 star = pygame.image.load('starobjectv2.png').convert_alpha()
