@@ -5,16 +5,6 @@ Created by Spacesity
 
 Sounds and Music created by Sync
 
-Developer notes:
-- New music and SFX by Sync
-- Permanent High Score Saving
-- Updated Graphics and Interface
-- New Star Multiplier
-- Ememies have equal speeds
-- 3 progressive difficulties
-- Improved movement mechanic
-- Minor technical improvements and bug fixes
-
 Controls:
 Press 'SPACE' to interact (Start/Pause/Restart). 
 Use arrow keys or 'A' and 'D' to move left and right.
@@ -136,7 +126,7 @@ while 1: # Start screen
                     mixer.music.load('Summer_song_FINAL.mp3')
                     mixer.music.set_volume(0.7)
                     mixer.music.play(-1)
-                elif SongRandomizer == 2:
+                if SongRandomizer == 2:
                     mixer.music.load('BeginningOfSomethingNew.mp3')
                     mixer.music.set_volume(0.7)
                     mixer.music.play(-1)
@@ -280,6 +270,7 @@ while 1:
 
     # If game pauses
     elif gamePause:
+        
         screen.blit(pauseButton, (75,125)) # Display pause
         pauseHint = redFaceFont.render("Press space to resume!", True, (255,255,255))
         currentScore = redFaceFont.render("Score: " + str( score), True, (255,255,255))
@@ -310,13 +301,12 @@ while 1:
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_SPACE:
                     StartSound.play()
-                    mixer.music.pause()
                     SongRandomizer2 = random.randint(1,2)
-                    if SongRandomizer == 1:
+                    if SongRandomizer2 == 1:
                         mixer.music.load('Summer_song_FINAL.mp3')
                         mixer.music.set_volume(0.7)
                         mixer.music.play(-1)
-                    elif SongRandomizer == 2:
+                    if SongRandomizer2 == 2:
                         mixer.music.load('BeginningOfSomethingNew.mp3')
                         mixer.music.set_volume(0.7)
                         mixer.music.play(-1)
@@ -358,3 +348,5 @@ while 1:
     # Update display
     pygame.display.flip()
     clock.tick(120) # Fps
+
+
