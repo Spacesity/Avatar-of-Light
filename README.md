@@ -21,10 +21,6 @@ DEVELOPER LOG:
 Created by Spacesity 
 Music by Sync (Sound Cloud: https://soundcloud.com/user-902044539) 
 
-Avatar of Light v1.3.0
-- New Music by Sync
-- Removed unecessary code
-
 MORE CONTENT COMING SOON. Join https://discord.gg/RnQ82k6Npb to keep up to date (Gaming/Events Server). 
 
 
