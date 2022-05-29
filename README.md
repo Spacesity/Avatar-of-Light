@@ -6,12 +6,16 @@ Install the latest version of Python: https://www.python.org/downloads/
 
 Go to the Avatar of Light page https://github.com/Spacesity/Avatar-of-Light, and click on the green "Code" button, then click "Download ZIP". This will download all the game files needed (Do not change the name of any file!).
 
-To install the requirements, paste this into Command Prompt on Windows:
+To install pygame, copy and paste this into Command Prompt:
 
 ```
-pip install -r requirements.txt
+pip install pygame
 ```
+Then proceed to upgrade pygame by pasting this:
 
+```
+py -m pip install --upgrade pip
+```
 To run the game go to the game folder and click "AvatarOfLight.py" and the game should start up.
 
 ## OBJECTIVE:
