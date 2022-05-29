@@ -15,7 +15,7 @@ pip install -r requirements.txt
 Paste this into Command prompt to run the game:
 
 ```
-python3 AvatarOfLight.py
+python AvatarOfLight.py
 ```
 ## OBJECTIVE:
 
