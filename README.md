@@ -12,11 +12,8 @@ To install the requirements, paste this into Command Prompt on Windows:
 pip install requirements.txt
 ```
 
-Paste this into Command prompt to run the game:
+To run the game go to the game folder and click "AvatarOfLight.py" and the game should start up.
 
-```
-python AvatarOfLight.py
-```
 ## OBJECTIVE:
 
 Use Arrow keys (left, right) and or WASD (A and D) to move side to side and spacebar to interact. You must avoid the enemies, and you earn 1 point for each enemy you dodge. Try and compete friends by getting high scores. 
