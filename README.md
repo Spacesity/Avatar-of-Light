@@ -1,5 +1,6 @@
 # Avatar-of-Light
-INSTALLING THE GAME:
+
+# INSTALLING THE GAME:
 
 Firslty you must install the latest version of python via the python website: https://www.python.org/downloads/
 
@@ -13,11 +14,11 @@ If the command prompt says your "pip" is outdates, then copy and paste this: pyt
 Once it has been successfully updated, open "IDLE Python" and go to File > New File and copy and paste the "Game Code". Proceed to "Run" (F5) and the game
 should be ready to go.
 
-GAME OBJECTIVE:
+# GAME OBJECTIVE:
 
 Use Arrow keys (left, right) and or WASD (A and D) to move side to side and spacebar to interact. You must avoid the enemies, and you earn 1 point for each enemy you dodge. Try and compete friends by getting high scores. 
 
-DEVELOPER LOG:
+# DEVELOPER LOG:
 Created by Spacesity 
 Music by Sync (Sound Cloud: https://soundcloud.com/user-902044539) 
 
