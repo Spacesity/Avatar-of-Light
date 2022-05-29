@@ -16,8 +16,8 @@ pip install -r requirements.txt
 Use Arrow keys (left, right) and or WASD (A and D) to move side to side and spacebar to interact. You must avoid the enemies, and you earn 1 point for each enemy you dodge. Try and compete friends by getting high scores. 
 
 ## CREDITS:
-Created by Spacesity 
-Music by Sync (Sound Cloud: https://soundcloud.com/user-902044539) 
-Join https://discord.gg/RnQ82k6Npb to keep up to date with my projects. 
+- Created by Spacesity 
+- Music by Sync (Sound Cloud: https://soundcloud.com/user-902044539) 
+- Join https://discord.gg/RnQ82k6Npb to keep up to date with my projects. 
 
 
