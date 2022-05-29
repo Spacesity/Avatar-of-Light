@@ -1,4 +1,4 @@
-# Avatar-of-Light
+# Avatar of Light
 
 ## INSTALLATION
 
@@ -6,12 +6,11 @@ Go to the Avatar of Light page https://github.com/Spacesity/Avatar-of-Light, and
 
 Install the latest version of Python: https://www.python.org/downloads/
 
-To install the requirements, do this:
+To install the requirements, paste this into Command Prompt on Windows:
 
 ```
 pip install -r requirements.txt
 ```
-
 ## OBJECTIVE:
 
 Use Arrow keys (left, right) and or WASD (A and D) to move side to side and spacebar to interact. You must avoid the enemies, and you earn 1 point for each enemy you dodge. Try and compete friends by getting high scores. 
