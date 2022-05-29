@@ -9,7 +9,7 @@ Go to the Avatar of Light page https://github.com/Spacesity/Avatar-of-Light, and
 To install the requirements, paste this into Command Prompt on Windows:
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 To run the game go to the game folder and click "AvatarOfLight.py" and the game should start up.
