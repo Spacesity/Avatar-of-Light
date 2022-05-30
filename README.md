@@ -2,7 +2,7 @@
 
 ## INSTALLATION
 
-Install the latest version of Python: https://www.python.org/downloads/
+Install the latest version of Python: https://www.python.org/downloads/ and when chosing to install, check the empty box which says "Add to PATH" (This is Necessary!).
 
 Go to the Avatar of Light page https://github.com/Spacesity/Avatar-of-Light, and click on the green "Code" button, then click "Download ZIP". This will download all the game files needed (Do not change the name of any file!).
 
