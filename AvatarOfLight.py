@@ -1,5 +1,5 @@
 """
-Avatar of Light v1.4.0
+Avatar of Light v1.4.1
 
 Created by Spacesity
 
@@ -14,10 +14,8 @@ import pygame
 from pygame.locals import *
 from pygame import mixer
 import sys, random, json, time
-from pygame.locals import *
 
 pygame.init()
-mixer.init()
 
 clock = pygame.time.Clock() # Frames per second
 pygame.key.set_repeat()
@@ -36,11 +34,11 @@ mult = pygame.image.load('multiplierv1.png').convert_alpha()
 logo = pygame.image.load("thelightlogo.png").convert_alpha()
 
 # Text loading
-redFaceFont = pygame.font.Font(None, 25) # RedFace font
-hint = redFaceFont.render("Press space to start!", True, (255,255,255))
-credit1 = redFaceFont.render("Created by Spacesity", True, (255,255,255))
-credit2 = redFaceFont.render("Music created by Sync", True, (255,255,255))
-retryHint = redFaceFont.render("You died. Retry? Press space!", True, (255,255,255))
+UsualFont = pygame.font.Font(None, 25) # RedFace font
+hint = UsualFont.render("Press space to start!", True, (255,255,255))
+credit1 = UsualFont.render("Created by Spacesity", True, (255,255,255))
+credit2 = UsualFont.render("Music created by Sync", True, (255,255,255))
+retryHint = UsualFont.render("You died. Retry? Press space!", True, (255,255,255))
 
 # Sound loading
 multiplierSound = pygame.mixer.Sound("powerUp.wav")
@@ -71,17 +69,37 @@ c = 0
 e = 0
 w = 0
 
-# Main game functions
+# Functions
 def exclusive_random(excl1, excl2, excl3): # Anti-SameLaneEnemies
     p = True 
-    gcse = int(random.random()*10)*blockSize
+    EnemyRan = int(random.random()*10)*blockSize
     while p == True:
-        if gcse == excl1 or gcse == excl2 or gcse == excl3:
+        if EnemyRan == excl1 or EnemyRan == excl2 or EnemyRan == excl3:
             p = True 
-            gcse = random.randint(0,9)*blockSize
+            EnemyRan = random.randint(0,9)*blockSize
         else:
             p = False
-            return gcse
+            return EnemyRan
+
+def music_random(): # Randomizes Music Tracks
+    SongRandomizer = random.randint(1,2)
+    if SongRandomizer == 1:
+        mixer.music.load('Summer_song_FINAL.mp3')
+        mixer.music.set_volume(0.7)
+        mixer.music.play(-1)
+    if SongRandomizer == 2:
+        mixer.music.load('BeginningOfSomethingNew.mp3')
+        mixer.music.set_volume(0.7)
+        mixer.music.play(-1)
+
+def EnemyCollision (playerX,playerY,enemyX,enemyY): # Collision
+            if (playerX < enemyX + blockSize and playerY >= enemyY and playerY < enemyY + blockSize and playerX >= enemyX) or \
+            (playerX + blockSize < enemyX + blockSize and playerY >= enemyY and playerY < enemyY + blockSize and playerX + blockSize > enemyX) or \
+            (playerX < enemyX + blockSize and playerY + blockSize >= enemyY and playerY + blockSize < enemyY + blockSize and playerX >= enemyX) or \
+            (playerX + blockSize < enemyX + blockSize and playerY + blockSize >= enemyY and playerY + blockSize < enemyY + blockSize and playerX + blockSize > enemyX):  
+                return True
+            else:
+                return False
 
 # Co-ordinates
 a = exclusive_random(c,e,w)# Position enemy 1
@@ -105,7 +123,6 @@ screen.blit(hint, (169, 325))
 screen.blit(credit1, (169, 400))
 screen.blit(credit2, (165, 425))
 screen.blit(startButton, (75,125)) # Start button co-ordinates
-colour = (255, 255, 255)# Rect colour
 pygame.display.set_caption('Avatar of Light')
 pygame.display.set_icon(logo)
 
@@ -120,16 +137,7 @@ while 1: # Start screen
             if event.key == pygame.K_SPACE:
                 mixer.music.pause()
                 StartSound.play()
-                time.sleep(0.6)
-                SongRandomizer = random.randint(1,2)
-                if SongRandomizer == 1:
-                    mixer.music.load('Summer_song_FINAL.mp3')
-                    mixer.music.set_volume(0.7)
-                    mixer.music.play(-1)
-                if SongRandomizer == 2:
-                    mixer.music.load('BeginningOfSomethingNew.mp3')
-                    mixer.music.set_volume(0.7)
-                    mixer.music.play(-1)
+                music_random()
                 gameStart = True
 
     if gameStart:
@@ -138,10 +146,11 @@ while 1: # Start screen
     # Update display
     pygame.display.flip()
     clock.tick(120) # Fps
+    pygame.display.update()
     
-# "The Game Loop"
+# Game Loop
 while 1:
-    screen.fill((0,0,0)) # Constantly black background
+    screen.fill((0,0,0)) # Black Background
     if gameStart:
         # Events input
         for event in pygame.event.get():
@@ -235,23 +244,13 @@ while 1:
             screen.blit(enemyFace, (enemyPosition[0], enemyPosition[1])) # Enemy square
 
         # Draws Text
-        img = redFaceFont.render("Score: " + str( score), True, (255,255,255))
+        img = UsualFont.render("Score: " + str( score), True, (255,255,255))
         screen.blit(img, (10, 475))
 
-        starScore = redFaceFont.render("Multiplier: " + str( multiplier), True, (255,255,255))
+        starScore = UsualFont.render("Multiplier: " + str( multiplier), True, (255,255,255))
         screen.blit(starScore, (10, 455))
 
         screen.blit(face, (x, y))
-
-        # Enemy Collision (So much code omg)
-        def EnemyCollision (playerX,playerY,enemyX,enemyY):
-            if (playerX < enemyX + blockSize and playerY >= enemyY and playerY < enemyY + blockSize and playerX >= enemyX) or \
-            (playerX + blockSize < enemyX + blockSize and playerY >= enemyY and playerY < enemyY + blockSize and playerX + blockSize > enemyX) or \
-            (playerX < enemyX + blockSize and playerY + blockSize >= enemyY and playerY + blockSize < enemyY + blockSize and playerX >= enemyX) or \
-            (playerX + blockSize < enemyX + blockSize and playerY + blockSize >= enemyY and playerY + blockSize < enemyY + blockSize and playerX + blockSize > enemyX):  
-                return True
-            else:
-                return False
 
         for enemyPosition in [(a,b),(c,d),(e,f)]:
             if EnemyCollision(x,y,enemyPosition[0],enemyPosition[1]):
@@ -270,10 +269,9 @@ while 1:
 
     # If game pauses
     elif gamePause:
-        
         screen.blit(pauseButton, (75,125)) # Display pause
-        pauseHint = redFaceFont.render("Press space to resume!", True, (255,255,255))
-        currentScore = redFaceFont.render("Score: " + str( score), True, (255,255,255))
+        pauseHint = UsualFont.render("Press space to resume!", True, (255,255,255))
+        currentScore = UsualFont.render("Score: " + str( score), True, (255,255,255))
         screen.blit(pauseHint, (160, 325))
         screen.blit(currentScore, (215, 360))
         
@@ -301,15 +299,7 @@ while 1:
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_SPACE:
                     StartSound.play()
-                    SongRandomizer2 = random.randint(1,2)
-                    if SongRandomizer2 == 1:
-                        mixer.music.load('Summer_song_FINAL.mp3')
-                        mixer.music.set_volume(0.7)
-                        mixer.music.play(-1)
-                    if SongRandomizer2 == 2:
-                        mixer.music.load('BeginningOfSomethingNew.mp3')
-                        mixer.music.set_volume(0.7)
-                        mixer.music.play(-1)
+                    music_random()
                     gameStart = True
                     count = 0 
                     score = 0
@@ -331,10 +321,10 @@ while 1:
                     
         screen.blit(retryButton, (75,125))
         screen.blit(retryHint, (125, 325))
-        retryScore = redFaceFont.render("Your score was: " + str( score), True, (255,255,255))
+        retryScore = UsualFont.render("Your score was: " + str( score), True, (255,255,255))
         if highScore[0] < score:
             highScore[0] = score
-        textHighScore = redFaceFont.render("High Score: " + str( highScore[0]), True, (255,255,255))
+        textHighScore = UsualFont.render("High Score: " + str( highScore[0]), True, (255,255,255))
         screen.blit(textHighScore, (195, 385))
         screen.blit(retryScore, (175, 355))
 
@@ -348,5 +338,4 @@ while 1:
     # Update display
     pygame.display.flip()
     clock.tick(120) # Fps
-
-
+    pygame.display.update()
