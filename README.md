@@ -2,25 +2,13 @@
 
 ## INSTALLATION
 
-Install the latest version of Python: https://www.python.org/downloads/ and when chosing to install, check the empty box which says "Add to PATH" (This is Necessary!).
-
 Go to the Avatar of Light page https://github.com/Spacesity/Avatar-of-Light, and click on the green "Code" button, then click "Download ZIP". This will download all the game files needed (Do not change the name of any file!).
 
-To install pygame, copy and paste this into Command Prompt (Type CMD in Windows Start):
-
-```
-pip install pygame
-```
-Then proceed to upgrade pygame by pasting this in Command Prompt:
-
-```
-py -m pip install --upgrade pip
-```
-To run the game go to the game folder and click "AvatarOfLight.py" and the game should start up.
+To run the game go to the ZIP folder, right click and click "Extract All". Then, proceed to click "AvatarOfLight.exe" and the game should start up.
 
 ## OBJECTIVE:
 
-Use Arrow keys (left, right) and or WASD (A and D) to move side to side and spacebar to interact. You must avoid the enemies, and you earn 1 point for each enemy you dodge. Try and compete friends by getting high scores. 
+Use Arrow keys (left, right) and or WASD (A and D) to move side to side and spacebar to interact. Avoid enemies as this will reward you with a point for each enemy you avoid. More content coming soon. 
 
 ## CREDITS:
 - Created by Spacesity 
