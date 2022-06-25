@@ -4,7 +4,7 @@
 
 Go to the Avatar of Light page https://github.com/Spacesity/Avatar-of-Light, and click on the green "Code" button, then click "Download ZIP". This will download all the game files needed (Do not change the name of any file!).
 
-To run the game go to the ZIP folder, right click and click "Extract All". Then, proceed to click "AvatarOfLight.exe" and the game should start up.
+To run the game go to the ZIP folder, right click and click "Extract All". If comes up with "Windows tried to protect your PC", no worries, press "more info" and "run anyway". Then, proceed to click "AvatarOfLight.exe" and the game should start up.
 
 ## OBJECTIVE:
 
